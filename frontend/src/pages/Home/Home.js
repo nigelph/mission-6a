@@ -54,6 +54,7 @@ function Home() {
             <button onClick={handleClickGet}>Click me to get!</button>
             <br />
             <br />
+            <p>this is a change showcasing git</p>
             <form onSubmit={(e) => postProduct(e)}>
                 <label>Product name</label>
                 <input type='text' onChange={(e) => setName(e.target.value)} />
