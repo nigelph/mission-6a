@@ -1,0 +1,58 @@
+.upper-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+#upper-content-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 0 5% 0 5%;
+}
+#logo-section {
+  display: flex;
+  flex-direction: flex-start;
+  width: 50%;
+}
+
+#logo-size {
+  width: 100%;
+  height: auto;
+}
+#right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 50%;
+}
+
+#account-links-container,
+#hamburger-section {
+  display: flex;
+  flex-direction: flex-end;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  height: 50%;
+}
+
+#logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 25%;
+}
+
+#hamburger-size {
+  height: auto;
+  width: 100%;
+}
+
+#hamburger-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 10%;
+}

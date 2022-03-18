@@ -1,0 +1,31 @@
+.bottom-header-container {
+  display: flex;
+  background-color: #d1d1d1;
+  height: 100%;
+  width: 100%;
+}
+
+#bottom-header-content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin: 0 5% 0 5%;
+  padding: 0.5rem 0 0.5rem 0;
+}
+#title-size {
+  max-width: 40%;
+}
+
+#left {
+  display: flex;
+  width: 50%;
+}
+#right {
+  display: flex;
+  flex-direction: flex-end;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 50%;
+}
