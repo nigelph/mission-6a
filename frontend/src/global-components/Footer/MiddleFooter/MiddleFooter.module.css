@@ -1,0 +1,22 @@
+.footer-container {
+    background-color: #909498;
+    color: black;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: #909498;
+    align-items: center;
+  }
+  
+  .flex-container > div {
+    background-color: #909498;
+    margin: 0;
+    padding: 0 0.25rem 0;
+    align-items: center;
+  }

@@ -1,0 +1,23 @@
+.footer-container {
+  background-color: #E4E4E4;
+  margin-top: auto;
+}
+
+.footer-container p {
+  font-family: "Circe",Helvetica,Arial,"Lucida Grande",sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #666;
+  text-align: left;
+  margin: 0 1rem 3rem;
+}
+
+.our-friends {
+  float: right;
+}
+
+.footer-container a {
+  color: #4e9c21;
+  background-color: transparent;
+  text-decoration: none;
+}
