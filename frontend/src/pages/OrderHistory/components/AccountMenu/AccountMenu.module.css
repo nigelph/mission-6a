@@ -1,0 +1,22 @@
+#section-container {
+  height: 100%;
+  width: 100%;
+}
+
+#menu-style {
+  list-style-type: none;
+  padding: 0 5% 0 5%;
+  text-align: left;
+}
+
+#menu-style li {
+  padding: 2px 0 2px 0;
+}
+
+#banner-width {
+  width: 110%;
+}
+
+#banner-container {
+  width: 100%;
+}

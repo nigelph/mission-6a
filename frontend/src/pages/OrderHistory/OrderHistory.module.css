@@ -1,0 +1,70 @@
+.order-history-page-container {
+  padding-top: 2.5%;
+  height: 100%;
+  width: 100%;
+  background-color: #eeeeee;
+}
+
+#order-history-inner-container {
+  display: flex;
+  height: 100%;
+  margin: 0 5% 0 5%;
+  /* background-color: blue; */
+}
+
+#account-menu-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+#left {
+  display: flex;
+  width: 20%;
+  background-color: purple;
+}
+#right {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  background: red;
+}
+
+#information-filter-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 12rem;
+}
+
+#information-container {
+  display: flex;
+  width: 100%;
+  background-color: blue;
+}
+#information-container p {
+  margin: 0;
+  padding: 0 10% 0 10%;
+}
+#information-content-container {
+  display: flex;
+
+  width: 100%;
+}
+#filter-container {
+  display: flex;
+  width: 30%;
+  /* background-color: green; */
+}
+#right-main-container {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 100%;
+  background-color: pink;
+}
+
+#right-main-content-container {
+  width: 100%;
+}

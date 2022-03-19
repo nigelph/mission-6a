@@ -1,0 +1,7 @@
+tr:nth-child(even) {
+  background-color: white;
+}
+
+#table-width {
+  width: 80%;
+}
