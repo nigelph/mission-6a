@@ -31,6 +31,8 @@ MongoClient.connect(url, {
     // Specify database you want to access
     const db = client.db('mission6');
     const products = db.collection('products')
+    const orderHistory = db.collection('order-history')
+    const orders = db.collection('orders')
 
     // QuickSort function
     const quickSort = list => {
@@ -80,6 +82,36 @@ MongoClient.connect(url, {
 
     })
 
+    app.get('/allOrders', (req, res) => {
+        orders.aggregate([
+            {
+                $lookup:
+                {
+                    from: 'products',
+                    localField: 'product_id',
+                    foreignField: '_id',
+                    as: 'orderDetails'
+                }
+            }
+        ]).toArray(function (err, res) {
+            if (err) throw err;
+            console.log(JSON.stringify(res));
+            console.log(res)
+
+        });
+        res.send(res)
+    })
+
+
+
+    // GET order history from db
+    app.get('/history', (req, res) => {
+        orders.find().toArray()
+            .then(results => {
+                console.log(results)
+                res.send(results)
+            })
+    })
     console.log(`MongoDB Connected: ${url}`);
 });
 
