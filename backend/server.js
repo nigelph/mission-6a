@@ -99,7 +99,7 @@ MongoClient.connect(url, {
             console.log(res)
 
         });
-        res.send(res)
+        // res.send(res)
     })
 
 
