@@ -1,0 +1,14 @@
+#blurb-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+#blurb-style {
+  text-align: center;
+  color: #d1d1d1;
+  font-weight: bold;
+  font-size: clamp(0.5rem 1rem 1.5);
+  -webkit-text-stroke: 0.2px black;
+}
