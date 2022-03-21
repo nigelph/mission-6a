@@ -27,6 +27,7 @@ export default function OrderTable() {
                     <th>Auto Ship</th>
                     <th>Shipped From</th>
                     <th>Total</th>
+                    <th>Action</th>
                 </tr>
                 {/* Populate page with all orders of a specific user */}
                 {
@@ -41,7 +42,6 @@ export default function OrderTable() {
                             <td>{history.auto_ship}</td>
                             <td>{history.shipping_location}</td>
                             <td>{`$${history.total}`}</td>
-                            <p>{history.user_id}</p>
                         </tr>
                     ) : (
                         ''

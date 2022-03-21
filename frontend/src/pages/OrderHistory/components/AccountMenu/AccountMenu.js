@@ -5,9 +5,6 @@ import MenuBanner from '../../../../assets/banner-order-history.png'
 function AccountMenu() {
     return (
         <section id={style['section-container']}>
-            <div id={style['banner-container']}>
-                <img src={MenuBanner} id={style['banner-width']} />
-            </div>
             <div>
                 <ul id={style['menu-style']}>
                     <h3>Account Menu</h3>

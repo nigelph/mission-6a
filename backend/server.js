@@ -39,12 +39,14 @@ MongoClient.connect(url, {
     app.post('/:pet/:category/:price/:brand/:age/:sale/:name/:desc/:country/:quantity', (req, res) => {
         let intNum = parseInt(req.params.quantity)
         let floatNum = parseFloat(req.params.price)
-        products.insertOne({ pet_type: req.params.pet, product_cat: req.params.category, price: floatNum, product_brand: req.params.brand, 
-            pet_age: req.params.age, sale_item: req.params.sale, product_name: req.params.name, product_desc: req.params.desc, country_of_origin: req.params.country, quantity: intNum })
-        .then(result => {
-            res.json('Product Added')
-            console.log(result)
+        products.insertOne({
+            pet_type: req.params.pet, product_cat: req.params.category, price: floatNum, product_brand: req.params.brand,
+            pet_age: req.params.age, sale_item: req.params.sale, product_name: req.params.name, product_desc: req.params.desc, country_of_origin: req.params.country, quantity: intNum
         })
+            .then(result => {
+                res.json('Product Added')
+                console.log(result)
+            })
     })
 
     // READ - GET ALL
@@ -58,116 +60,116 @@ MongoClient.connect(url, {
 
     // READ - GET by PET
     app.get('/pet/:getPet', (req, res) => {
-        products.find({pet_type: req.params.getPet}).toArray()
-        .then(results => {
-            console.log(results)
-            res.send(results)
-        })
+        products.find({ pet_type: req.params.getPet }).toArray()
+            .then(results => {
+                console.log(results)
+                res.send(results)
+            })
     })
 
     // READ - GET by CATEGORY
     app.get('/category/:getCat', (req, res) => {
-        products.find({product_cat: req.params.getCat}).toArray()
-        .then(results => {
-            console.log(results)
-            res.send(results)
-        })
+        products.find({ product_cat: req.params.getCat }).toArray()
+            .then(results => {
+                console.log(results)
+                res.send(results)
+            })
     })
 
     // READ - GET by PRICE
     app.get('/price/:getPrice', (req, res) => {
         let number = parseFloat(req.params.getPrice)
-        products.find({price: number}).toArray()
-        .then(results => {
-            console.log(results)
-            res.send(results)
-        })
+        products.find({ price: number }).toArray()
+            .then(results => {
+                console.log(results)
+                res.send(results)
+            })
     })
 
     // READ - GET by MIN PRICE
     app.get('/minPrice/:getMinPrice', (req, res) => {
         let number = parseFloat(req.params.getMinPrice)
-        products.find({price: { $gte: number }}).toArray()
-        .then(results => {
-            console.log(results)
-            res.send(results)
-        })
+        products.find({ price: { $gte: number } }).toArray()
+            .then(results => {
+                console.log(results)
+                res.send(results)
+            })
     })
 
     // READ - GET by MAX PRICE
     app.get('/maxPrice/:getMaxPrice', (req, res) => {
         let number = parseFloat(req.params.getMaxPrice)
-        products.find({price: { $lte: number }}).toArray()
-        .then(results => {
-            console.log(results)
-            res.send(results)
-        })
+        products.find({ price: { $lte: number } }).toArray()
+            .then(results => {
+                console.log(results)
+                res.send(results)
+            })
     })
 
     // READ - GET by BRAND
     app.get('/brand/:getBrand', (req, res) => {
-        products.find({product_brand: req.params.getBrand}).toArray()
-        .then(results => {
-            console.log(results)
-            res.send(results)
-        })
+        products.find({ product_brand: req.params.getBrand }).toArray()
+            .then(results => {
+                console.log(results)
+                res.send(results)
+            })
     })
 
     // READ - GET by AGE
     app.get('/age/:getAge', (req, res) => {
-        products.find({pet_age: req.params.getAge}).toArray()
-        .then(results => {
-            console.log(results)
-            res.send(results)
-        })
+        products.find({ pet_age: req.params.getAge }).toArray()
+            .then(results => {
+                console.log(results)
+                res.send(results)
+            })
     })
 
     // READ - GET by SALE
     app.get('/sale/:getSale', (req, res) => {
-        products.find({sale_item: req.params.getSale}).toArray()
-        .then(results => {
-            console.log(results)
-            res.send(results)
-        })
+        products.find({ sale_item: req.params.getSale }).toArray()
+            .then(results => {
+                console.log(results)
+                res.send(results)
+            })
     })
 
     // READ - GET by COUNTRY
     app.get('/country/:getCountry', (req, res) => {
-        products.find({country_of_origin: req.params.getCountry}).toArray()
-        .then(results => {
-            console.log(results)
-            res.send(results);
-        })
+        products.find({ country_of_origin: req.params.getCountry }).toArray()
+            .then(results => {
+                console.log(results)
+                res.send(results);
+            })
     })
 
     // READ - GET by QUANTITY
     app.get('/quantity/:getQuantity', (req, res) => {
         let number = parseInt(req.params.getQuantity)
-        products.find({quantity: number}).toArray()
-        .then(results => {
-            console.log(results)
-            res.send(results);
-        })
+        products.find({ quantity: number }).toArray()
+            .then(results => {
+                console.log(results)
+                res.send(results);
+            })
     })
 
     // READ - GET by MINIMUM QUANTITY
     app.get('/minQuantity/:getMinQuantity', (req, res) => {
         let number = parseInt(req.params.getMinQuantity)
-        products.find({quantity: { $gte: number }}).toArray()
-        .then(results => {
-            console.log(results)
-            res.send(results);
-        })
+        products.find({ quantity: { $gte: number } }).toArray()
+            .then(results => {
+                console.log(results)
+                res.send(results);
+            })
     })
 
     // READ - GET by MAXIMUM QUANTITY
     app.get('/maxQuantity/:getMaxQuantity', (req, res) => {
         let number = parseInt(req.params.getMaxQuantity)
-        products.find({quantity: { $lte: number }}).toArray()
-        .then(results => {
-            console.log(results)
-            res.send(results);
-        })
+        products.find({ quantity: { $lte: number } }).toArray()
+            .then(results => {
+                console.log(results)
+                res.send(results);
+            })
     })
 
     app.post('/:input', (req, res) => {
@@ -184,38 +186,43 @@ MongoClient.connect(url, {
     app.put('/update/:pet/:category/:price/:brand/:age/:sale/:name/:desc/:country/:quantity', (req, res) => {
         let intNum = parseInt(req.params.quantity)
         let floatNum = parseFloat(req.params.price)
-        products.updateOne({ product_name: req.params.name }, { $set: { pet_type: req.params.pet, product_cat: req.params.category, price: floatNum, product_brand: req.params.brand, 
-            pet_age: req.params.age, sale_item: req.params.sale, product_name: req.params.name, product_desc: req.params.desc, 
-            country_of_origin: req.params.country, quantity: intNum }}, {upsert: true})
-        .then(result => {
-            res.json('Product Updated')
-            console.log(result)
-        })
+        products.updateOne({ product_name: req.params.name }, {
+            $set: {
+                pet_type: req.params.pet, product_cat: req.params.category, price: floatNum, product_brand: req.params.brand,
+                pet_age: req.params.age, sale_item: req.params.sale, product_name: req.params.name, product_desc: req.params.desc,
+                country_of_origin: req.params.country, quantity: intNum
+            }
+        }, { upsert: true })
+            .then(result => {
+                res.json('Product Updated')
+                console.log(result)
+            })
     })
 
     // DELETE - ONE by NAME
     app.delete('/test/:deleteName', (req, res) => {
-        products.deleteOne({product_name: req.params.deleteName})
-        .then(result => {
-            if (result.deletedCount === 0) {
-                return res.json('No product to delete')
-            }
-            res.json('Product Deleted')       
-        })
+        products.deleteOne({ product_name: req.params.deleteName })
+            .then(result => {
+                if (result.deletedCount === 0) {
+                    return res.json('No product to delete')
+                }
+                res.json('Product Deleted')
+            })
     })
 
     // DELETE - MANY by NAME
     app.delete('/manyName/:deleteManyName', (req, res) => {
-        products.deleteMany({product_name: req.params.deleteManyName})
-        .then(result => {
-            if (result.deletedCount === 0) {
-                return res.json('No products to delete')
-            }
-            res.json('Products deleted')
-        })
+        products.deleteMany({ product_name: req.params.deleteManyName })
+            .then(result => {
+                if (result.deletedCount === 0) {
+                    return res.json('No products to delete')
+                }
+                res.json('Products deleted')
+            })
     })
 
     app.get('/allOrders', (req, res) => {
+
         orders.aggregate([
             {
                 $lookup:
@@ -232,8 +239,60 @@ MongoClient.connect(url, {
             console.log(res)
 
         });
-        // res.send(res)
     })
+
+    // Get all orders by YEAR
+    app.post('/year/:orderYear', (req, res) => {
+        // Convert user input to an int
+        const customYear = parseInt(req.params.orderYear)
+
+        orders.find({
+            $expr: {
+                $and: [
+                    {
+                        "$eq": [
+                            {
+                                "$year": "$date"
+                            },
+                            // Show all orders within the specfiied year here
+                            customYear
+                        ]
+                    }
+                ]
+            }
+        }).toArray()
+            .then(result => {
+                console.log(result)
+                console.log(req.params.test)
+            })
+    })
+    // Get all orders by MONTH
+    app.post('/month/:orderMonth', (req, res) => {
+        // Convert user input to an int
+        const customMonth = parseInt(req.params.orderMonth)
+
+        orders.find({
+            $expr: {
+                $and: [
+                    {
+                        "$eq": [
+                            {
+                                "$month": "$date"
+                            },
+                            // Show all orders within the specfiied year here
+                            customMonth
+                        ]
+                    }
+                ]
+            }
+        }).toArray()
+            .then(result => {
+                console.log(result)
+                // console.log(req.params.test)
+                res.send(result)
+            })
+    })
+
 
 
 
