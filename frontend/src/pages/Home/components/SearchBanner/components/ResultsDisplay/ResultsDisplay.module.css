@@ -1,0 +1,7 @@
+.results-container {
+    background-color: #FFFFFF;
+    font-family: "Circe",Georgia,"Times New Roman",Times,serif;
+    margin: 2rem 0rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 7px 6px 2px rgb(0 0 0 / 40%);
+}

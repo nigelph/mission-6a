@@ -4,11 +4,12 @@ import Home from "./pages/Home/Home"
 import OrderHistory from './pages/OrderHistory/OrderHistory'
 import Header from './global-components/Header/Header'
 import Footer from "./global-components/Footer/Footer"
+import style from './App.module.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" id={style['app-container']}>
       <Header />
       <BrowserRouter>
         <Routes>
