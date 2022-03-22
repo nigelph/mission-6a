@@ -7,8 +7,7 @@
 }
 #blurb-style {
   text-align: center;
-  color: #d1d1d1;
+  color: black;
   font-weight: bold;
   font-size: clamp(0.5rem 1rem 1.5);
-  -webkit-text-stroke: 0.2px black;
 }

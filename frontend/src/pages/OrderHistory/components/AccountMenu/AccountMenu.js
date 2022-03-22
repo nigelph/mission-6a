@@ -1,6 +1,5 @@
 import React from 'react'
 import style from './AccountMenu.module.css'
-import MenuBanner from '../../../../assets/banner-order-history.png'
 
 function AccountMenu() {
     return (

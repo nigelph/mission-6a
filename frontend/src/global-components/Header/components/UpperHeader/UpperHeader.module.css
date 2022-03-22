@@ -36,6 +36,7 @@
   justify-content: flex-end;
   width: 100%;
   height: 50%;
+  font-weight: bold;
 }
 
 #logo-container {
@@ -55,4 +56,22 @@
   justify-content: center;
   align-items: center;
   max-width: 10%;
+}
+
+.icon-style {
+  min-width: 20%;
+  max-width: 50%;
+  height: auto;
+}
+.icon-title {
+  margin-block: 0;
+}
+#shopping-cart-area {
+  margin: 0;
+}
+#profile-area {
+  margin: 0;
+}
+#signup-style {
+  color: #f21d2f;
 }

@@ -8,6 +8,11 @@
   padding: 0 5% 0 5%;
   text-align: left;
 }
+#menu-style h1 {
+  color: #f21d2f;
+  margin-top: 0;
+  font-size: clamp(14px, 1.5rem, 50px);
+}
 
 #menu-style li {
   padding: 2px 0 2px 0;
