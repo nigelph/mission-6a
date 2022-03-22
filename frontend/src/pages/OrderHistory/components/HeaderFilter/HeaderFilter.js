@@ -58,8 +58,6 @@ function HeaderFilter() {
                         </select>
                         <input type='text' onChange={(e) => setYear(e.target.value)} placeholder="Search by Year"></input>
                         <button id={style['filter-button']} onClick={filterResults}>GO FETCH</button>
-
-
                     </div >
                 </div>
             </div >
