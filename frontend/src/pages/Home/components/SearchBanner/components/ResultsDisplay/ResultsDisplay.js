@@ -17,15 +17,15 @@ function ResultsDisplay(props) {
             {
                 results.map(result =>
                     <div style={{ textAlign: 'left' }}>
+                        <p><b>Product Category: </b>{result.category}</p>
+                        <p><b>Product Sub-Category: </b>{result.sub_category}</p>
                         <p><b>Pet Type: </b>{result.pet_type}</p>
-                        <p><b>Product Category: </b>{result.product_cat}</p>
-                        <p><b>Product Price: </b>{`$${result.price}`}</p>
-                        <p><b>Product Brand: </b>{result.product_brand}</p>
                         <p><b>Pet Age: </b>{result.pet_age}</p>
+                        <p><b>Product Brand: </b>{result.brand}</p>
                         <p><b>Product Name: </b>{result.product_name}</p>
-                        <p><b>Product Description: </b> {result.product_desc}</p>
-                        <p><b>Country of Origin: </b>{result.country_of_origin}</p>
-                        <p><b>Quantity: </b>{result.quantity}</p>
+                        <p><b>Product Price: </b>{`$${result.price}`}</p>
+                        <p>{result.image}</p>
+                        <p><b>Product Description: </b> {result.description}</p>
                         
                         <br />
                     </div>
