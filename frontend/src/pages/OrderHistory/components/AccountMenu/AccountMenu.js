@@ -7,7 +7,7 @@ function AccountMenu() {
         <section id={style['section-container']}>
             <div>
                 <ul id={style['menu-style']}>
-                    <h3>Account Menu</h3>
+                    <h1>Account Menu</h1>
                     <li>Order History</li>
                     <li>Edit Profile</li>
                     <li>Change Password</li>
