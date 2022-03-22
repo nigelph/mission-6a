@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 // Connect to LOCAL MongoDB URL
 // const url = 'mongodb://127.0.0.1:27017';
 
-// Mongo Atlas
+// Insert Mongo Atlas url here
 const url = 'mongodb+srv://nigel:pot3Toes@mission6.jnlpa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
 // Connect to mongo container in Docker
@@ -241,60 +241,84 @@ MongoClient.connect(url, {
         });
     })
 
-    // Get all orders by YEAR
-    app.post('/year/:orderYear', (req, res) => {
-        // Convert user input to an int
-        const customYear = parseInt(req.params.orderYear)
-
-        orders.find({
-            $expr: {
-                $and: [
-                    {
-                        "$eq": [
-                            {
-                                "$year": "$date"
-                            },
-                            // Show all orders within the specfiied year here
-                            customYear
-                        ]
-                    }
-                ]
-            }
-        }).toArray()
-            .then(result => {
-                console.log(result)
-                console.log(req.params.test)
-            })
+    // ORDER HISTORY
+    // Search and filter order results by either (Year) OR (Month) OR (Year AND Month)
+    app.post('/filter/:month/:year', (req, res) => {
+        const month = parseInt(req.params.month)
+        const year = parseInt(req.params.year)
+        console.log(month)
+        if (year && !month) {
+            orders.find({
+                $expr: {
+                    $and: [
+                        {
+                            "$eq": [
+                                {
+                                    "$year": "$date"
+                                },
+                                // Show all orders within the specfiied year here
+                                year
+                            ]
+                        }
+                    ]
+                }
+            }).toArray()
+                .then(result => {
+                    console.log(result)
+                    res.send(result)
+                })
+        }
+        else if (month && !year) {
+            orders.find({
+                $expr: {
+                    $and: [
+                        {
+                            "$eq": [
+                                {
+                                    "$month": "$date"
+                                },
+                                // Show all orders within the specfiied year here
+                                month
+                            ]
+                        }
+                    ]
+                }
+            }).toArray()
+                .then(result => {
+                    console.log(result)
+                    res.send(result)
+                })
+        }
+        // Display orders of a given MONTH AND YEAR
+        if (year && month) {
+            orders.find({
+                $expr: {
+                    $and: [
+                        {
+                            "$eq": [
+                                {
+                                    "$month": "$date"
+                                },
+                                month
+                            ]
+                        },
+                        {
+                            "$eq": [
+                                {
+                                    "$year": "$date"
+                                },
+                                year
+                            ]
+                        }
+                    ]
+                }
+            }).toArray()
+                .then(result => {
+                    console.log(result)
+                    res.send(result)
+                })
+        }
     })
-    // Get all orders by MONTH
-    app.post('/month/:orderMonth', (req, res) => {
-        // Convert user input to an int
-        const customMonth = parseInt(req.params.orderMonth)
-
-        orders.find({
-            $expr: {
-                $and: [
-                    {
-                        "$eq": [
-                            {
-                                "$month": "$date"
-                            },
-                            // Show all orders within the specfiied year here
-                            customMonth
-                        ]
-                    }
-                ]
-            }
-        }).toArray()
-            .then(result => {
-                console.log(result)
-                // console.log(req.params.test)
-                res.send(result)
-            })
-    })
-
-
-
 
     // GET order history from db
     app.get('/history', (req, res) => {
@@ -302,6 +326,7 @@ MongoClient.connect(url, {
             .then(results => {
                 console.log(results)
                 res.send(results)
+
             })
     })
     console.log(`MongoDB Connected: ${url}`);
