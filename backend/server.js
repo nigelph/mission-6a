@@ -49,22 +49,26 @@ MongoClient.connect(url, {
             })
     })
 
-    
+
 
     // READ - SEARCH BY SELECTED PARAMS FILTER 1
     app.get('/products/filter1/:getCategory/:getSubCategory/:getAge/:getBrand', (req, res) => {
-        products.find({ $and: [{category: req.params.getCategory}, {sub_category: req.params.getSubCategory}, 
-            {pet_age: req.params.getAge}, {brand: req.params.getBrand}]} ).toArray()
+        products.find({
+            $and: [{ category: req.params.getCategory }, { sub_category: req.params.getSubCategory },
+            { pet_age: req.params.getAge }, { brand: req.params.getBrand }]
+        }).toArray()
             .then(results => {
                 console.log(quickSort(results))
                 res.send(quickSort(results))
             })
     })
-    
+
     // READ - SEARCH BY SELECTED PARAMS FILTER 2
     app.get('/products/filter2/:getCategory/:getSubCategory/:getAge/:getBrand', (req, res) => {
-        products.find({ $or: [{category: req.params.getCategory}, {sub_category: req.params.getSubCategory}, 
-            {pet_age: req.params.getAge}, {brand: req.params.getBrand}]} ).toArray()
+        products.find({
+            $or: [{ category: req.params.getCategory }, { sub_category: req.params.getSubCategory },
+            { pet_age: req.params.getAge }, { brand: req.params.getBrand }]
+        }).toArray()
             .then(results => {
                 console.log(quickSort(results))
                 res.send(quickSort(results))
@@ -74,7 +78,7 @@ MongoClient.connect(url, {
     // READ - SEARCH BY SELECTED PARAMS FILTER 3
     app.get('/products/filter3/:getCategory/:getBrand', (req, res) => {
         products.find()
-        .toArray()
+            .toArray()
             .then(results => {
                 let newArray = []
                 let newArray2 = []
@@ -84,7 +88,7 @@ MongoClient.connect(url, {
                         delete results[element]
                     }
                 });
-                
+
 
 
                 // results.forEach(element => {
@@ -101,7 +105,7 @@ MongoClient.connect(url, {
 
                 //console.log(quickSort(results))
                 res.send(quickSort(results))
-                
+
             })
     })
 
