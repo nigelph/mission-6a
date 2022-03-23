@@ -104,3 +104,20 @@
   width: 100%;
   height: 100%;
 }
+
+.view-order-button {
+  background-color: #f21d2f;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding-block: 0.5rem;
+}
+
+.view-order-button:hover {
+  background-color: white;
+  color: #f21d2f;
+  cursor: pointer;
+}
