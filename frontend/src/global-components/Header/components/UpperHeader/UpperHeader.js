@@ -19,7 +19,7 @@ function UpperHeader() {
                         <nav id={style['hamburger-container']}><img src={Hamburger} id={style['hamburger-size']}></img></nav>
 
                     </div>
-                    <div id={style['account-links-container']}>
+                    {/* <div id={style['account-links-container']}>
                         <div id={style['profile-area']}>
                             <a href='http://localhost:3000/orders'>
                                 <img src={Profile} className={style['icon-style']} />
@@ -31,7 +31,7 @@ function UpperHeader() {
                             <img src={Cart} className={style['icon-style']} />
                             <p className={style['icon-title']}>My Cart</p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
