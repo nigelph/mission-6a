@@ -45,17 +45,27 @@ MongoClient.connect(url, {
             })
     })
 
-    // READ - SEARCH BY SELECTED PARAMS FILTER 1
-    app.get('/products/filter1/:getCategory/:getSubCategory/:getAge/:getBrand', (req, res) => {
-        products.find({ $and: [{category: req.params.getCategory}, {sub_category: req.params.getSubCategory}, 
-            {pet_age: req.params.getAge}, {brand: req.params.getBrand}]} ).toArray()
+    // READ - GET ALL LIMITED TO FIRST 10 IN ALPHABETICAL ORDER
+    app.get('/products', (req, res) => {
+        products.find().limit(10).toArray()
             .then(results => {
                 console.log(quickSort(results))
                 res.send(quickSort(results))
             })
     })
-    
-    
+  
+    // READ - SEARCH BY SELECTED PARAMS FILTER 1
+    app.get('/products/filter1/:getCategory/:getSubCategory/:getAge/:getBrand', (req, res) => {
+        products.find({
+            $and: [{ category: req.params.getCategory }, { sub_category: req.params.getSubCategory },
+            { pet_age: req.params.getAge }, { brand: req.params.getBrand }]
+        }).toArray()
+            .then(results => {
+                console.log(quickSort(results))
+                res.send(quickSort(results))
+            })
+    })
+  
     // READ - GET by PET
     app.get('/pet/:getPet', (req, res) => {
         products.find({ pet_type: req.params.getPet }).toArray()

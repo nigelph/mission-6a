@@ -81,22 +81,27 @@ function HeaderFilter() {
                             </tr>
                             {
                                 order.map((history, index) => {
+                                    let date = new Date(history.date);
+
                                     if (history.user_id === id) {
                                         return <tr id={style['table-data']}>
                                             <td>{history._id}</td>
-                                            <td>{history.date}</td>
+                                            <td>{date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()}</td>
                                             <td>{history.status}</td>
                                             <td>{history.reference}</td>
                                             <td>{history.total_units}</td>
                                             <td>{history.auto_ship}</td>
                                             <td>{history.shipping_location}</td>
                                             <td>{`$${history.total}`}</td>
-                                            <td>{`${history.user_id}`}</td>
+                                            <td><button className={style['view-order-button']}>VIEW ORDER</button></td>
+
                                         </tr>
                                     } if (history.user_id === id && month) {
+                                        let date = new Date(history.date);
+
                                         return <tr id={style['table-data']}>
                                             <td>{history._id}</td>
-                                            <td>{history.date}</td>
+                                            <td>{date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()}</td>
                                             <td>{history.status}</td>
                                             <td>{history.reference}</td>
                                             <td>{history.total_units}</td>
@@ -106,9 +111,10 @@ function HeaderFilter() {
                                             <td>{`${history.user_id}`}</td>
                                         </tr>
                                     } if (history.user_id === id && year) {
+                                        let date = new Date(history.date);
                                         return <tr id={style['table-data']}>
                                             <td>{history._id}</td>
-                                            <td>{history.date}</td>
+                                            <td>{date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()}</td>
                                             <td>{history.status}</td>
                                             <td>{history.reference}</td>
                                             <td>{history.total_units}</td>
@@ -118,9 +124,10 @@ function HeaderFilter() {
                                             <td>{`${history.user_id}`}</td>
                                         </tr>
                                     } if (history.user_id === id && month && year) {
+                                        let date = new Date(history.date);
                                         return <tr id={style['table-data']}>
                                             <td>{history._id}</td>
-                                            <td>{history.date}</td>
+                                            <td>{date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()}</td>
                                             <td>{history.status}</td>
                                             <td>{history.reference}</td>
                                             <td>{history.total_units}</td>
