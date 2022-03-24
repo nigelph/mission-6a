@@ -15,14 +15,11 @@ import Owner from '../../../../assets/pet-owner-icon.png'
 
 function SearchBanner() {
 
-    const [getPet, setGetPet] = useState()
-    const [getCategory, setGetCategory] = useState(null)
-    const [getSubCategory, setGetSubCategory] = useState(null)
-    const [getAge, setGetAge] = useState(null)
-    const [getPrice, setGetPrice] = useState(null)
-    const [getBrand, setGetBrand] = useState("")
-
-    const [getSearch, setGetSearch] = useState([])
+    const [getCategory, setGetCategory] = useState()
+    const [getSubCategory, setGetSubCategory] = useState()
+    const [getAge, setGetAge] = useState()
+    const [getPrice, setGetPrice] = useState()
+    const [getBrand, setGetBrand] = useState()
 
     const [results, setResults] = useState([])
 
@@ -36,195 +33,167 @@ function SearchBanner() {
 
     // SEARCH DOG
     function clickGetDog() {
+
+        document.getElementById("button1").style.background = "#F21D2F";
+        document.getElementById("button2").style.background = "#E4E4E4";
+        document.getElementById("button3").style.background = "#E4E4E4";
+        document.getElementById("button4").style.background = "#E4E4E4";
+        document.getElementById("button5").style.background = "#E4E4E4";
+        document.getElementById("button6").style.background = "#E4E4E4";
+        document.getElementById("button7").style.background = "#E4E4E4";
+        document.getElementById("button8").style.background = "#E4E4E4";
+
+
         axios.get(`http://localhost:8080/pet/Dog`)
             .then((res) => {
                 setResults(res.data)
                 console.log(res.data)
-                document.getElementById("select").innerHTML = "You have selected: ";
-                document.getElementById("pet").innerHTML = "Dog";
             })
     }
 
     // SEARCH CAT
     function clickGetCat() {
+
+    document.getElementById("button1").style.background = "#E4E4E4";
+    document.getElementById("button2").style.background = "#F21D2F";
+    document.getElementById("button3").style.background = "#E4E4E4";
+    document.getElementById("button4").style.background = "#E4E4E4";
+    document.getElementById("button5").style.background = "#E4E4E4";
+    document.getElementById("button6").style.background = "#E4E4E4";
+    document.getElementById("button7").style.background = "#E4E4E4";
+    document.getElementById("button8").style.background = "#E4E4E4";
+
         axios.get(`http://localhost:8080/pet/Cat`)
             .then((res) => {
                 setResults(res.data)
                 console.log(res.data)
-                document.getElementById("select").innerHTML = "You have selected: ";
-                document.getElementById("pet").innerHTML = "Cat";
             })
     }
 
     // SEARCH FISH
     function clickGetFish() {
+
+        document.getElementById("button1").style.background = "#E4E4E4";
+        document.getElementById("button2").style.background = "#E4E4E4";
+        document.getElementById("button3").style.background = "#F21D2F";
+        document.getElementById("button4").style.background = "#E4E4E4";
+        document.getElementById("button5").style.background = "#E4E4E4";
+        document.getElementById("button6").style.background = "#E4E4E4";
+        document.getElementById("button7").style.background = "#E4E4E4";
+        document.getElementById("button8").style.background = "#E4E4E4";
+
         axios.get(`http://localhost:8080/pet/Fish`)
             .then((res) => {
                 setResults(res.data)
                 console.log(res.data)
-                document.getElementById("select").innerHTML = "You have selected: ";
-                document.getElementById("pet").innerHTML = "Fish";
             })
     }
 
     // SEARCH BUNNY
     function clickGetBunny() {
+
+        document.getElementById("button1").style.background = "#E4E4E4";
+        document.getElementById("button2").style.background = "#E4E4E4";
+        document.getElementById("button3").style.background = "#E4E4E4";
+        document.getElementById("button4").style.background = "#F21D2F";
+        document.getElementById("button5").style.background = "#E4E4E4";
+        document.getElementById("button6").style.background = "#E4E4E4";
+        document.getElementById("button7").style.background = "#E4E4E4";
+        document.getElementById("button8").style.background = "#E4E4E4";
+
         axios.get(`http://localhost:8080/pet/Rabbit`)
             .then((res) => {
                 setResults(res.data)
                 console.log(res.data)
-                document.getElementById("select").innerHTML = "You have selected: ";
-                document.getElementById("pet").innerHTML = "Rabbit";
             })
     }
 
     // SEARCH BIRD
     function clickGetBird() {
+
+        document.getElementById("button1").style.background = "#E4E4E4";
+        document.getElementById("button2").style.background = "#E4E4E4";
+        document.getElementById("button3").style.background = "#E4E4E4";
+        document.getElementById("button4").style.background = "#E4E4E4";
+        document.getElementById("button5").style.background = "#F21D2F";
+        document.getElementById("button6").style.background = "#E4E4E4";
+        document.getElementById("button7").style.background = "#E4E4E4";
+        document.getElementById("button8").style.background = "#E4E4E4";
+
         axios.get(`http://localhost:8080/pet/Bird`)
             .then((res) => {
                 setResults(res.data)
                 console.log(res.data)
-                document.getElementById("select").innerHTML = "You have selected: ";
-                document.getElementById("pet").innerHTML = "Bird";
             })
     }
 
     // SEARCH TURTLE
     function clickGetTurtle() {
+
+        document.getElementById("button1").style.background = "#E4E4E4";
+        document.getElementById("button2").style.background = "#E4E4E4";
+        document.getElementById("button3").style.background = "#E4E4E4";
+        document.getElementById("button4").style.background = "#E4E4E4";
+        document.getElementById("button5").style.background = "#E4E4E4";
+        document.getElementById("button6").style.background = "#F21D2F";
+        document.getElementById("button7").style.background = "#E4E4E4";
+        document.getElementById("button8").style.background = "#E4E4E4";
+
         axios.get(`http://localhost:8080/pet/Turtle`)
             .then((res) => {
                 setResults(res.data)
                 console.log(res.data)
-                document.getElementById("select").innerHTML = "You have selected: ";
-                document.getElementById("pet").innerHTML = "Turtle";
             })
     }
 
     // SEARCH HORSE
     function clickGetHorse() {
+
+        document.getElementById("button1").style.background = "#E4E4E4";
+        document.getElementById("button2").style.background = "#E4E4E4";
+        document.getElementById("button3").style.background = "#E4E4E4";
+        document.getElementById("button4").style.background = "#E4E4E4";
+        document.getElementById("button5").style.background = "#E4E4E4";
+        document.getElementById("button6").style.background = "#E4E4E4";
+        document.getElementById("button7").style.background = "#F21D2F";
+        document.getElementById("button8").style.background = "#E4E4E4";
+
         axios.get(`http://localhost:8080/pet/Horse`)
             .then((res) => {
                 setResults(res.data)
                 console.log(res.data)
-                document.getElementById("select").innerHTML = "You have selected: ";
-                document.getElementById("pet").innerHTML = "Horse";
             })
     }
 
     // SEARCH HUMAN
     function clickGetHuman() {
+
+        document.getElementById("button1").style.background = "#E4E4E4";
+        document.getElementById("button2").style.background = "#E4E4E4";
+        document.getElementById("button3").style.background = "#E4E4E4";
+        document.getElementById("button4").style.background = "#E4E4E4";
+        document.getElementById("button5").style.background = "#E4E4E4";
+        document.getElementById("button6").style.background = "#E4E4E4";
+        document.getElementById("button7").style.background = "#E4E4E4";
+        document.getElementById("button8").style.background = "#F21D2F";
+
         axios.get(`http://localhost:8080/pet/Pet Owner`)
             .then((res) => {
                 setResults(res.data)
                 console.log(res.data)
-                document.getElementById("select").innerHTML = "You have selected: ";
-                document.getElementById("pet").innerHTML = "Pet Owner";
             })
-    }
-
-    //// START - FILTER FUNCTIONS ////////////////////////////////////////////
-
-    // FILTER CATEGORY
-    function filterCategory() {
-        document.getElementById("select").innerHTML = "You have selected: ";
-        document.getElementById("food").innerHTML = getCategory;
-    }
-
-    // FILTER SUB CATEGORIES
-    function filterSubCategory() {
-        document.getElementById("select").innerHTML = "You have selected: ";
-        document.getElementById("category").innerHTML = getSubCategory;
-    }
-
-    // FILTER AGE
-    function filterAge() {
-        document.getElementById("select").innerHTML = "You have selected: ";
-        document.getElementById("age").innerHTML = getAge;
-    }
-
-    // FILTER PRICE
-    function filterPrice() {
-        document.getElementById("select").innerHTML = "You have selected: ";
-        document.getElementById("price").innerHTML = getPrice;
-    }
-
-    // FILTER BRAND
-    function filterBrand() {
-        document.getElementById("select").innerHTML = "You have selected: ";
-        document.getElementById("brand").innerHTML = getBrand;
     }
 
     // // GET ALL FILTERS 1
-    // function getFilters() {
+    function applyFilters() {
         
-    //     axios.get(`http://localhost:8080/products/filter1/${getCategory}/${getSubCategory}/${getAge}/${getBrand}`)
-    //         .then((res) => {
-    //             setResults(res.data)
-    //             console.log(res.data)
-    //             document.getElementById("filter").innerHTML = "Fetching results..."
-    //         })
-    //         document.getElementById("pet").innerHTML = ""; 
-    //         document.getElementById("select").innerHTML = ""; 
-    //         setGetCategory(null)
-    //         document.getElementById("food").innerHTML = ""; 
-    //         setGetSubCategory(null)
-    //         document.getElementById("category").innerHTML = ""; 
-    //         setGetAge(null)
-    //         document.getElementById("age").innerHTML = ""; 
-    //         setGetPrice(null)
-    //         document.getElementById("price").innerHTML = ""; 
-    //         setGetBrand(null)
-    //         document.getElementById("brand").innerHTML = ""; 
-    // }
-
-    //  // GET ALL FILTERS 2
-    //  function getFilters() {
-        
-    //     axios.get(`http://localhost:8080/products/filter2/${getCategory}/${getSubCategory}/${getAge}/${getBrand}`)
-    //         .then((res) => {
-    //             setResults(res.data)
-    //             console.log(res.data)
-    //             document.getElementById("filter").innerHTML = "Fetching results..."
-    //         })
-    //         document.getElementById("pet").innerHTML = ""; 
-    //         document.getElementById("select").innerHTML = ""; 
-    //         setGetCategory(null)
-    //         document.getElementById("food").innerHTML = ""; 
-    //         setGetSubCategory(null)
-    //         document.getElementById("category").innerHTML = ""; 
-    //         setGetAge(null)
-    //         document.getElementById("age").innerHTML = ""; 
-    //         setGetPrice(null)
-    //         document.getElementById("price").innerHTML = ""; 
-    //         setGetBrand(null)
-    //         document.getElementById("brand").innerHTML = ""; 
-    // }
-
-    // GET ALL FILTERS 3
-    function getFilters() {
-
-        axios.get(`http://localhost:8080/products/filter3/${getCategory}/${getBrand}`)
+        axios.get(`http://localhost:8080/products/filter1/${getCategory}/${getSubCategory}/${getAge}/${getBrand}`)
             .then((res) => {
                 setResults(res.data)
-                //console.log(res.data)
+                console.log(res.data)
                 document.getElementById("filter").innerHTML = "Fetching results..."
             })
-
-            document.getElementById("pet").innerHTML = ""; 
-            document.getElementById("select").innerHTML = ""; 
-            setGetCategory(null)
-            document.getElementById("food").innerHTML = ""; 
-            setGetSubCategory(null)
-            document.getElementById("category").innerHTML = ""; 
-            setGetAge(null)
-            document.getElementById("age").innerHTML = ""; 
-            setGetPrice(null)
-            document.getElementById("price").innerHTML = ""; 
-            setGetBrand(null)
-            document.getElementById("brand").innerHTML = ""; 
     }
-
-    //// FINISH - FILTER FUNCTIONS ////////////////////////////////////////////////
 
     return (
         <div className={style['search-container']}>
@@ -232,19 +201,19 @@ function SearchBanner() {
             <div className={style['search-container-inner']}> 
                 <h3>Shop for your pet, select an icon to begin...</h3>
                 <div className={style['flex-container']}>
-                    <button onClick={clickGetDog}><img src={Dog} className={style['icon-img']} alt="For Dog Owners" /></button>
-                    <button onClick={clickGetCat}><img src={Cat} className={style['icon-img']} alt="For cat Owners" /></button>
-                    <button onClick={clickGetFish}><img src={Fish} className={style['icon-img']} alt="For Fish Owners" /></button>
-                    <button onClick={clickGetBunny}><img src={Rabbit} className={style['icon-img']} alt="For Rabbit Owners" /></button>
-                    <button onClick={clickGetBird}><img src={Bird} className={style['icon-img']} alt="For Bird Owners" /></button>
-                    <button onClick={clickGetTurtle}><img src={Turtle} className={style['icon-img']} alt="For Turtle Owners" /></button>
-                    <button onClick={clickGetHorse}><img src={Horse} className={style['icon-img']} alt="For Horse Owners" /></button>
-                    <button onClick={clickGetHuman}><img src={Owner} className={style['icon-img']} alt="For Pet Owners" /></button>
+                    <button id="button1" className={style['specButton active']} onClick={clickGetDog}><img id="myImage" src={Dog} className={style['icon-img']} alt="For Dog Owners" /></button>
+                    <button id="button2" className={style['specButton']} onClick={clickGetCat}><img src={Cat} className={style['icon-img']} alt="For cat Owners" /></button>
+                    <button id="button3" onClick={clickGetFish}><img src={Fish} className={style['icon-img']} alt="For Fish Owners" /></button>
+                    <button id="button4" onClick={clickGetBunny}><img src={Rabbit} className={style['icon-img']} alt="For Rabbit Owners" /></button>
+                    <button id="button5" onClick={clickGetBird}><img src={Bird} className={style['icon-img']} alt="For Bird Owners" /></button>
+                    <button id="button6" onClick={clickGetTurtle}><img src={Turtle} className={style['icon-img']} alt="For Turtle Owners" /></button>
+                    <button id="button7" onClick={clickGetHorse}><img src={Horse} className={style['icon-img']} alt="For Horse Owners" /></button>
+                    <button id="button8" onClick={clickGetHuman}><img src={Owner} className={style['icon-img']} alt="For Pet Owners" /></button>
                 </div>
                 <h3>Save time! Search using one or more of the filters below...</h3>
                 <div className={style['flex-container']}>
-                    <div>
-                        <select id="mySelect" onClick={filterCategory} onChange={(e) => setGetCategory(e.target.value)}>
+                    <div className={style['filter-container']}>
+                        <select id="mySelect" onClick={(e) => setGetCategory(e.target.value)}>
                             <option>Category</option>
                             <option>Food</option>
                             <option value="Bowls &amp; Storage" >Bowls &amp; Storage</option>
@@ -258,8 +227,8 @@ function SearchBanner() {
                             <option value="For Pet Owners">For Pet Owners</option>
                         </select>
                     </div>
-                    <div>
-                        <select id="mySelect" onClick={filterSubCategory} onChange={(e) => setGetSubCategory(e.target.value)}>
+                    <div className={style['filter-container']}>
+                        <select id="mySelect" onClick={(e) => setGetSubCategory(e.target.value)}>
                             <option>Sub Category</option>
                             <option value="Dry Food">Dry Food</option>
                             <option value="Wet Food">Wet Food</option>
@@ -268,11 +237,12 @@ function SearchBanner() {
                             <option value="Milk Replacement">Milk Replacement</option>
                             <option value="Frozen Foods">Frozen Foods</option>
                             <option value="Vet Only Diets">Vet Only Diets</option>
+                            <option value="Health &amp; Specialty ">Health &amp; Specialty</option>
                             <option value="NZ Made Food">NZ Made Food</option>
                         </select>
                     </div>
-                    <div>
-                        <select id="mySelect" onClick={filterAge} onChange={(e) => setGetAge(e.target.value)}>
+                    <div id={style['filter-container']}>
+                        <select id="mySelect" onClick={(e) => setGetAge(e.target.value)}>
                             <option>Pet Age</option>
                             <option value="Newborn">Newborn</option>
                             <option value="Puppy">Puppy/Kitten</option>
@@ -281,16 +251,16 @@ function SearchBanner() {
                             <option value="Senior">Senior</option>
                         </select>
                     </div>
-                    <div>
-                        <select id="mySelect" onClick={filterPrice} onChange={(e) => setGetPrice(e.target.value)}>
+                    <div className={style['filter-container']}>
+                        <select id="mySelect" onClick={(e) => setGetPrice(e.target.value)}>
                             <option>Price</option>
                             <option value="Hi-Lo">Hi-Lo</option>
                             <option value="Lo-Hi">Lo-Hi</option>
                             <option value="Sale Items">Sale Items</option>
                         </select>
                     </div>
-                    <div>
-                        <select id="mySelect" onClick={filterBrand} onChange={(e) => setGetBrand(e.target.value)}>
+                    <div className={style['filter-container']}>
+                        <select id="mySelect" onClick={(e) => setGetBrand(e.target.value)}>
                             <option>Brand</option>
                             <option value="Acana">Acana</option>
                             <option value="Addiction">Addiction</option>
@@ -303,24 +273,17 @@ function SearchBanner() {
                         </select>
                     </div>
                     <div>
-                        <button className={style['filter-button']} onClick={getFilters}><b>GO FETCH</b></button>
+                        <button className={style['filter-button']} onClick={applyFilters}><b>GO FETCH</b></button>
                     </div>
                 </div>
                 <div className={style['flex-container-filters']}>
-                    <p id="select"></p>
-                    <p id="pet"></p>
-                    <p id="food"></p>
-                    <p id="category"></p>
-                    <p id="age"></p>
-                    <p id="price"></p>
-                    <p id="brand"></p>
                     <p id="filter"></p>
                 </div> 
             </div>
 
             <SpecialsBanner />
             <ResultsDisplay searchResults={results}/>
-            
+
         </div>
 
     )
